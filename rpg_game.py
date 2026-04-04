@@ -32,14 +32,23 @@ def game_test():
     places = [
         Place("Limestone Cafe", 0),
         Place("Hidden Grotto", 1),
-        Place("Cave of Mystery", 2)
+        Place("Fozberry Falls", 2), 
+        Place("Abandoned Mine", 3), 
+        Place("Deep Canyon Trail", 4), 
+        Place("Whispering Stream", 5), 
+        Place("Mushroom Forest", 6), 
+        Place("Underground Crystal Palace", 7), 
+        Place("Secret Bunker", 8),
+        Place("Cave of Mystery", 9)
     ]
 
     characters = [
-        Character("Bill", "human", "super sleep"),
-        Character("Star", "hound dog", "super smell"),
-        Character("Little", "lionhead rabbit", "finding medicinal herbs"),
-        Character("Zor", "alien", "telepathy")
+        Character("Bill", "human old man", "super sleep"),
+        Character("Liz", "human waitress", "super memory"),
+        Character("Star", "coonhound mix dog", "super bark"),
+        Character("Jenny", "jackabee mix dog", "super smell"), 
+        Character("Little", "male lionhead rabbit", "finding medicinal herbs"),
+        Character("Zor", "semi-visible alien", "telepathy")
     ]
 
     # Random selection
