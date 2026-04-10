@@ -48,29 +48,63 @@ class ShoppingCart:
                 print("Not enough {selected_product}s in stock! Please choose a lesser ammount.")
                 return
             
+            # add item to cart (first check if the item is already in the cart)
+
+            if selected_product in self.items:
+                self.items[selected_product] += quantity
+            else:
+                self.items[selected_product] = quantity 
+
+            # reduce stock of item in store
+
+            selected_product.stock -= quantity 
             
+            print(f"Successfully added {quantity} of {selected_product} to your cart!")
 
         except ValueError:
             print("Enter a valid product number!")
 
 
 
-            # check if available  
-                
+    def remove_product(self, store):
 
-        # remove from stock
+        if not self.items: 
+            print("\n Your Shopping Cart is Empty 🙃 Nothing to remove!")
+
+        # cart list of items to remove
+        cart_list = list(self.items.keys())
+
+        for i, product in enumerate(cart_list, 1):
+            quantity_in_cart = self.items[product]
+            print(f"{i}. {product.name} (Quantity in Cart: {quantity_in_cart})")
+        
+        print("=" * 40)
+
+        try:
+            choice = int(input("Enter the number of the item you want to remove: "))
+            if choice < 1 or choice > len(store):
+                print("Please enter a valid number to select a product to remove.")
+                return
+            
+            selected_product = store[choice - 1]
+
+            quantity = int(input("How many {selected_product} would you like to remove? "))
+            if quantity < 1 or quantity > quantity_in_cart:
+                print("Please enter a valid quantity. ")
+                return 
+            
+            # remove from cart 
+            self.items[selected_product] -= quantity
+
+                # if item quantity is zero
+            
+            # restock the store
+            selected_product.stock += quantity 
 
 
-        # add to cart 
+        except ValueError: 
+            return 
 
-            # check if already in cart 
-
-
-    def remove_product(self, product, quantity):
-
-        # show items in cart 
-
-        # select product
         
         # remove from cart
 
